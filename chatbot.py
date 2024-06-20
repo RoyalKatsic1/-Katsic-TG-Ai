@@ -3,15 +3,15 @@ import openai
 import requests
 import telebot
 import pickle
-from langchain.vectorstores import FAISS as BaseFAISS
+from .langchain.vectorstores import FAISS as BaseFAISS
 
-from dotenv import load_dotenv
-from gtts import gTTS
-from pydub import AudioSegment
-from celery import Celery
+from .dotenv import load_dotenv
+from .gtts import gTTS
+from .pydub import AudioSegment
+from .celery import Celery
 import speech_recognition as sr
 
-from langchain.embeddings import OpenAIEmbeddings
+from .langchain.embeddings import OpenAIEmbeddings
 
 load_dotenv()
 
@@ -19,16 +19,16 @@ SYSTEM_PROMPT = os.getenv('SYSTEM_PROMPT')
 
 app = Celery('chatbot', broker=os.getenv('CELERY_BROKER_URL'))
 
-TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
+TELEGRAM_BOT_TOKEN = os.getenv('5636862844:AAGG7jioAoBUoe3KINGbZpQZQFMCBAky1oo')
 
-bot = telebot.TeleBot(TELEGRAM_BOT_TOKEN)
+bot = telebot.TeleBot('5636862844:AAGG7jioAoBUoe3KINGbZpQZQFMCBAky1oo')
 
-OPENAI_API_KEY = os.getenv('OPEN_AI_KEY')
+OPENAI_API_KEY = os.getenv('sk-proj-sEGTaTR5SxkTHdtIocNST3BlbkFJtxOCFlzE8tNWN7US28Rz')
 MODEL_NAME = os.getenv('MODEL_NAME')
 
-embeddings = OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY)
+embeddings = OpenAIEmbeddings(openai_api_key='sk-proj-sEGTaTR5SxkTHdtIocNST3BlbkFJtxOCFlzE8tNWN7US28Rz')
 
-# Store the last 10 conversations for each user
+# Store the last 30 conversations for each user
 conversations = {}
 
 
