@@ -3,15 +3,15 @@ import openai
 import requests
 import telebot
 import pickle
-from .langchain.vectorstores import FAISS as BaseFAISS
+from langchain.vectorstores import FAISS as BaseFAISS
 
-from .dotenv import load_dotenv
-from .gtts import gTTS
-from .pydub import AudioSegment
-from .celery import Celery
+from dotenv import load_dotenv
+from gtts import gTTS
+from pydub import AudioSegment
+from celery import Celery
 import speech_recognition as sr
 
-from .langchain.embeddings import OpenAIEmbeddings
+from langchain.embeddings import OpenAIEmbeddings
 
 load_dotenv()
 
