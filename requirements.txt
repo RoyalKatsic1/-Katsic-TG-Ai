@@ -10,3 +10,4 @@ gTTS
 pydub
 langchain
 tiktoken
+langchain-community
